@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F & J CO.Eventos - Alquiler para Eventos</title>
+  <style>
+    body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: url(galeria/INH.png) no-repeat center center fixed;
+
+  background-size: cover;
+  color: #fff;
+}
+
+    
+    header {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
+      color: rgb(255, 217, 0);
+      font-size: 28px;
+      margin: 0;
+      font-family: 'Georgia', serif;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      cursor: pointer;
+      font-family: 'Georgia', serif;
+    }
+    nav a:hover {
+      color: rgb(255, 217, 0);
+    }
+    .banner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.7);
+      height: 400px;
+      text-align: center;
+      color: rgb(253, 253, 253);
+      font-size: 36px;
+      font-weight: bold;
+    }
+    .info-section {
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .info-section h2 {
+      color: gold;
+    }
+    .highlight-boxes {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .highlight {
+      background-color: #222;
+      border: 1px solid gold;
+      padding: 20px;
+      margin: 10px;
+      width: 200px;
+      text-align: center;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: rgba(0, 0, 0, 0.9);
+      color: #888;
+      text-align: center;
+      padding: 20px;
+    }
+    .section {
+      display: none;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .section.active {
+      display: block;
+    }
+    .media-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .media-gallery img, .media-gallery video {
+      max-width: 300px;
+      border: 2px solid gold;
+      border-radius: 8px;
+    }
+    .btn-whatsapp {
+      background-color: white;
+      color: black;
+      padding: 10px 20px;
+      border: 2px solid black;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Georgia', serif;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .btn-whatsapp:hover {
+      background-color: gold;
+      color: black;
+      border-color: gold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>F & J CO.Eventos</h1>
+    <nav>
+       <a onclick="mostrarSeccion('contacto')">Contacto</a>
+      <a onclick="mostrarSeccion('imagenes')">Imágenes</a>
+      <a onclick="mostrarSeccion('videos')">Videos</a>
+      <a onclick="mostrarSeccion('servicios')">Servicios</a>
+      
+    </nav>
+  </header>
+
+  <div class="banner">
+  </header>
+  Decoración de globos y alquiler de mobiliario en Quito
+  </div>
+
+  <section id="inicio" class="section active">
+    <div class="info-section">
+      <h2>¿Quiénes somos?</h2>
+      <p>Somos F & J CO.EVENTOS, especialistas en decoración con globos y alquiler para eventos especiales. Nuestro objetivo es hacer que cada celebración 
+        sea única y mágica.</p>
+    </div>
+  </section>
+
+  <section id="imagenes" class="section">
+    <h2>Galería de Imágenes</h2>
+    <div class="galeria">
+      <img src="eventer.jpeg" alt="Imagen 1" />
+      <img src="eventh.jpeg" alt="Imagen 2" />
+      <img src="eventl.jpeg" alt="Imagen 3" />
+      <img src="evento.jpeg" alt="Imagen 4" />
+      <img src="events.jpeg" alt="Imagen 5" />
+      <img src="eventy.jpegs" alt="Imagen 6" />
+    </div>
+  </section>
+
+  <section id="videos" class="section">
+    <h2>Videos Promocionales</h2>
+    <div class="media-gallery">
+      <video controls src="f-j-coeventos_IAho6dNF.mp4"></video>
+      
+    </div>
+  </section>
+
+  <section id="servicios" class="section">
+    <h2>Servicios Disponibles</h2>
+    <ul>
+      <li>Alquiler de sillas y mesas elegantes</li>
+      <li>Decoración de eventos</li>
+      <li>Organización de bodas, cumpleaños y más</li>
+      <li>Servicio de entrega y montaje</li> 
+       <li>Mesas temáticas y candy bar</li>  
+      </li>
+    </ul>
+  </section>
+
+  <section id="contacto" class="section">
+    <h2>Contáctanos</h2>
+    <p>¿Deseas una cotización o reservar una fecha para tu evento?</p>
+    <p>📱 <strong>0995869852</strong></p>
+    <div>
+      <a class="btn-whatsapp" href="https://wa.me/593995869852" target="_blank">Escríbenos por WhatsApp</a>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 F & J CO.Eventos. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function mostrarSeccion(id) {
+      const secciones = document.querySelectorAll('.section');
+      secciones.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
